@@ -11,35 +11,45 @@ const Skills = () => {
       width: "w-40",
       height: "h-40",
       icon: Icons().framer,
-      position: "relative top-32 left-4",
+      position: "w-16 h-16 relative top-32 left-5",
+      secondColor: "",
+      thirdColor: "",
     },
     {
       name: "Nextjs",
       width: "w-64",
       height: "h-64",
       icon: Icons().framer,
-      position: "relative top-12 left-2",
+      position: "w-16 h-16 relative top-12 -left-4",
+      secondColor: "",
+      thirdColor: "",
     },
     {
       name: "Tailwindcss",
       width: "w-96",
       height: "h-96",
       icon: Icons().framer,
-      position: "relative top-3 left-24",
+      position: "w-16 h-16 relative -top-4 left-24",
+      secondColor: "",
+      thirdColor: "",
     },
     {
       name: "Framer Motion",
       width: "w-[550px]",
       height: "h-[550px]",
       icon: Icons().framer,
-      position: "relative top-96 left-4",
+      position: "w-16 h-16 relative top-96 left-2",
+      secondColor: "",
+      thirdColor: "",
     },
     {
       name: "React Query",
       width: "w-[700px]",
       height: "h-[700px]",
       icon: Icons().framer,
-      position: "relative top-56 left-2",
+      position: "w-24 h-24 relative top-56 -left-8",
+      secondColor: "w-[78px] h-[78px]",
+      thirdColor: "w-14 h-14",
     },
   ]
   return (
@@ -82,14 +92,54 @@ const Skills = () => {
             ].join(" ")}
             key={index}
           >
-            <div className={["6f6e6e 262424 131212", orbit.position].join(" ")}>
-              {orbit.icon}
-            </div>
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{
+                duration: 1.2,
+                type: "spring",
+                delay: 4,
+              }}
+              className={[
+                "rounded-full bg-[#0000002d] backdrop-blur-sm flex items-center justify-center border-[1px] border-my_border",
+                orbit.position,
+              ].join(" ")}
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{
+                  duration: 1.2,
+                  type: "spring",
+                  delay: 4.1,
+                }}
+                className={[
+                  "rounded-full bg-[#00000007] backdrop-blur-sm flex items-center justify-center",
+                  orbit.secondColor,
+                ].join(" ")}
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{
+                    duration: 1.2,
+                    type: "spring",
+                    delay: 4.2,
+                  }}
+                  className={[
+                    "rounded-full bg-black-0 backdrop-blur-sm flex items-center justify-center",
+                    orbit.thirdColor,
+                  ].join(" ")}
+                >
+                  {orbit.icon}
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         ))}
         <motion.div
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
+          initial={{ scale: 0, rotate: 90 }}
+          whileInView={{ scale: 1, rotate: 0 }}
           transition={{
             duration: 3,
             type: "spring",
@@ -97,6 +147,7 @@ const Skills = () => {
             bounce: 0.6,
             stiffness: 100,
           }}
+          viewport={{ once: true }}
           className=""
         >
           <div className="w-[100px] h-[100px] rounded-full bg-[#0000002a] absolute -z-10 mt-[6px]" />
