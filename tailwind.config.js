@@ -16,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        "gradient-radial":
+          "radial-gradient(circle farthest-side at 50% 0,hsla(0,0%,100%,.12),hsla(0,0%,100%,0));",
+      },
       colors: {
         blue: "#007bff",
         green: "#009b55ff",
