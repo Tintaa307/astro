@@ -176,7 +176,7 @@ const Skills = () => {
                   }}
                   viewport={{ once: true }}
                   className={[
-                    "rounded-full bg-black-0 backdrop-blur-sm flex items-center justify-center cursor-pointer ",
+                    "rounded-full backdrop-blur-sm flex items-center justify-center cursor-pointer ",
                     orbit.thirdColor,
                   ].join(" ")}
                 >

@@ -5,6 +5,7 @@ import Title from "../shared/Title"
 import Navbar from "./Navbar"
 import { motion } from "framer-motion"
 import { cn } from "../../lib/utils"
+import Content from "./Content"
 
 const Projects = () => {
   const [isFinished, setIsFinished] = useState(false)
@@ -32,13 +33,14 @@ const Projects = () => {
             viewport={{ once: true }}
             onAnimationComplete={() => setIsFinished(true)}
             className={cn(
-              "w-[85%] h-[600px] bg-black-800 rounded-lg border-[2px] border-my_border",
+              "w-[85%] h-[600px] bg-black-800 rounded-lg border-[2px] border-my_border flex items-center justify-start flex-col",
               {
                 "bg-gradient-radial transition-all duration-1000": isFinished,
               }
             )}
           >
             <Navbar />
+            <Content />
           </motion.article>
         </div>
       </div>

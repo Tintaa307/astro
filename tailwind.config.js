@@ -19,6 +19,7 @@ module.exports = {
       backgroundImage: {
         "gradient-radial":
           "radial-gradient(circle farthest-side at 50% 0,hsla(0,0%,100%,.12),hsla(0,0%,100%,0));",
+        "figma-radial": "linear-gradient(135deg,#1e1e1f,#1e1e20);",
       },
       colors: {
         blue: "#007bff",
@@ -67,6 +68,7 @@ module.exports = {
           950: "#2a2a2c",
         },
         my_border: "hsl(var(--border-box))",
+        figma_border: "#4f4f50",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -112,6 +114,7 @@ module.exports = {
       boxShadow: {
         box: "var(--shadow)",
         shine: "0 0 10px rgba(255, 255, 255, 0.2)",
+        dark: "0 22px 40px -10px rgba(0,0,0,.25)",
       },
 
       keyframes: {
