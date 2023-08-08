@@ -108,10 +108,11 @@ const Content = () => {
           position: "absolute",
           width: width,
           height: width,
+          transformOrigin: "left",
         }}
-        className={
-          "bg-figma-radial shadow-dark border-[1px] border-figma_border rounded-lg"
-        }
+        className={cn(
+          "bg-figma-radial border-[1px] border-figma_border shadow-dark rounded-lg"
+        )}
       ></motion.div>
     </main>
   )
