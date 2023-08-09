@@ -434,6 +434,24 @@ export const Icons = () => {
         <path d="M17 7.5a1.5 1.5 0 0 1 3 0v8.5a6 6 0 0 1 -6 6h-2h.208a6 6 0 0 1 -5.012 -2.7a69.74 69.74 0 0 1 -.196 -.3c-.312 -.479 -1.407 -2.388 -3.286 -5.728a1.5 1.5 0 0 1 .536 -2.022a1.867 1.867 0 0 1 2.28 .28l1.47 1.47"></path>
       </svg>
     ),
+    close: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="icon icon-tabler icon-tabler-x"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        stroke="#fff"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M18 6l-12 12"></path>
+        <path d="M6 6l12 12"></path>
+      </svg>
+    ),
   }
 
   return logos

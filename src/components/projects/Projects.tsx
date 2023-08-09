@@ -33,7 +33,7 @@ const Projects = () => {
             viewport={{ once: true }}
             onAnimationComplete={() => setIsFinished(true)}
             className={cn(
-              "w-[85%] h-[600px] bg-black-800 rounded-lg border-[2px] border-my_border flex items-center justify-start flex-col",
+              "w-[85%] h-[600px] bg-black-800 rounded-lg border-[2px] border-my_border flex items-center justify-start flex-col overflow-hidden",
               {
                 "bg-gradient-radial transition-all duration-1000": isFinished,
               }

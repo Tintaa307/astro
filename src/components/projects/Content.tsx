@@ -4,25 +4,72 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { cn } from "../../lib/utils"
+import { Icons } from "../icons/Icons"
 
 const variants = {
+  off: {},
+  on: {
+    x: [0, 0, 1000],
+    y: [220, -30, 420],
+    transition: { duration: 4.5, type: "tween", delay: 1.2 },
+  },
+}
+
+const contentVariants = {
   off: {
-    display: "none",
+    x: -40,
+    opacity: 0,
   },
   on: {
-    display: "block",
-    x: 1000,
-    y: 420,
-    transition: { duration: 4.2, type: "tween", delay: 0.8 },
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, type: "tween", delay: 0.6 },
   },
+}
+
+const closeVariants = {
+  off: {},
+  on: {
+    rotate: [0, 29, 0],
+    transition: {
+      duration: 0.8,
+      type: "tween",
+      delay: 0.8,
+      ease: "easeInOut",
+    },
+  },
+}
+
+interface ProjectProps {
+  name: string
+  description: string
+  link: string
+  github: string
 }
 
 const Content = () => {
   const [isSelected, setIsSelected] = useState(false)
+  const [counter, setCounter] = useState(0)
+  const [item, setItem] = useState("")
+  const [content, setContent] = useState(false)
+  const [close, setClose] = useState(false)
+  const [project, setProject] = useState({} as ProjectProps | undefined)
   const x = useMotionValue(0)
-  const width = useTransform(x, [0, 1000], ["0%", "75%"]) as MotionValue<string>
+  const y = useMotionValue(0)
+  const scale = useTransform(x, [0, 1000], [0, 1]) as MotionValue<number>
+  const transform = useTransform(
+    y,
+    [0, 25, 0],
+    ["0px", "-40px", "100%"]
+  ) as MotionValue<string>
+
+  useEffect(() => {
+    const project = projects.find((project) => project.name === item)
+    setProject(project)
+  }, [item])
+
   const projects = [
     {
       name: "Chatbot",
@@ -76,7 +123,10 @@ const Content = () => {
       <div className="flex items-center justify-center flex-row gap-5">
         {projects.map((project, index) => (
           <motion.div
-            onClick={() => setIsSelected(true)}
+            onClick={() => {
+              setIsSelected(true)
+              setItem(project.name)
+            }}
             initial={{ scale: 0 }}
             whileInView={{
               scale: 1,
@@ -96,24 +146,83 @@ const Content = () => {
         variants={variants}
         style={{ x }}
         animate={isSelected ? "on" : "off"}
-        className={cn("absolute -mt-96 left-[150px] opacity-0 z-20", {
+        className={cn("absolute -mt-96 left-[120px] opacity-0 z-20", {
           "opacity-100": isSelected,
         })}
-        onAnimationComplete={() => setIsSelected(false)}
+        onAnimationComplete={() => {
+          setCounter(counter + 1)
+          setIsSelected(false)
+          if (counter > 1) setContent(true)
+        }}
       >
         <img className="w-[74px] h-[74px]" src="/cursor.png" alt="cursor" />
       </motion.div>
       <motion.div
         style={{
+          scale: scale,
           position: "absolute",
-          width: width,
-          height: width,
-          transformOrigin: "left",
+          transformOrigin: "top left",
         }}
         className={cn(
-          "bg-figma-radial border-[1px] border-figma_border shadow-dark rounded-lg"
+          "w-[75%] h-[75%] bg-figma-radial border-[1px] border-figma_border shadow-dark rounded-lg"
         )}
-      ></motion.div>
+      >
+        <div className="w-full h-full flex items-center justify-center flex-row">
+          <div className="w-1/2 h-full flex items-center justify-center">
+            <motion.div
+              initial={"off"}
+              variants={contentVariants}
+              animate={content ? "on" : "off"}
+              className="flex flex-col gap-4 ml-12"
+            >
+              <h1 className="text-white-800 font-semibold text-3xl">
+                {project?.name}
+              </h1>
+              <p className="w-3/4 text-gray-900 font-semibold text-sm">
+                {project?.description}
+              </p>
+              <a
+                className="w-1/2 flex items-center justify-center flex-row gap-3 bg-figma-radial border-[1px] border-figma_border shadow-dark rounded-md py-1.5 text-white-800 font-semibold hover:shadow-shine transition-shadow"
+                href={project?.github}
+              >
+                Repository {Icons().github}
+              </a>
+            </motion.div>
+          </div>
+          <div className="w-1/2 h-full flex items-center justify-center ">
+            <motion.img
+              initial={{ scale: 0 }}
+              animate={content ? { scale: 1 } : { scale: 0 }}
+              transition={{ duration: 0.5, type: "tween", delay: 1.2 }}
+              src="/gym.jpg"
+              alt="gym"
+              className={"w-[300px] h-[400px] rounded-md"}
+            />
+          </div>
+          <div
+            onClick={() => setClose(true)}
+            className="absolute top-5 left-5 cursor-pointer"
+          >
+            {Icons().close}
+          </div>
+          <div
+            className={cn("absolute opacity-0", {
+              "opacity-100 transition-all duration-500": close,
+              "opacity-0": !close,
+            })}
+          >
+            <motion.img
+              style={{ rotate: y }}
+              initial={"off"}
+              variants={closeVariants}
+              animate={close ? "on" : "off"}
+              className="w-[74px] h-[74px]"
+              src="/cursor.png"
+              alt="cursor"
+            />
+          </div>
+        </div>
+      </motion.div>
     </main>
   )
 }
