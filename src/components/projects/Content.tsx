@@ -59,11 +59,11 @@ const Content = () => {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const scale = useTransform(x, [0, 1000], [0, 1]) as MotionValue<number>
-  const transform = useTransform(
-    y,
-    [0, 25, 0],
-    ["0px", "-40px", "100%"]
-  ) as MotionValue<string>
+  // const transform = useTransform(
+  //   y,
+  //   [0, 25, 0],
+  //   ["0px", "-40px", "100%"]
+  // ) as MotionValue<string>
 
   useEffect(() => {
     const project = projects.find((project) => project.name === item)
