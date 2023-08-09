@@ -47,6 +47,7 @@ interface ProjectProps {
   description: string
   link: string
   github: string
+  build: string
 }
 
 const Content = () => {
@@ -77,6 +78,9 @@ const Content = () => {
         "This is a chatbot helper to support or manage your webapps and give a better user experience.",
       link: "chatbot-tintaa307.vercel.app",
       github: "https://github.com/Tintaa307/chatbot",
+      build: `This project was built with ${Icons().nextjs}, ${
+        Icons().typescript
+      }, ${Icons().tailwindcss}, ${Icons().openai} and ${Icons().radix}.`,
     },
     {
       name: "Realtime Chat",
@@ -84,6 +88,9 @@ const Content = () => {
         "An aplicattion for chatting with adding friends by the E-Mail.",
       link: "realtime-chat-tintaa307.vercel.app",
       github: "https://github.com/Tintaa307/realtime-chat",
+      build: `This project was built with ${Icons().nextjs}, ${
+        Icons().typescript
+      }, ${Icons().tailwindcss}, ${Icons().prisma} and ${Icons().planetScale}.`,
     },
     {
       name: "Tavross",
@@ -91,18 +98,27 @@ const Content = () => {
         "The perfect application to be in shape and learn things about the gym.",
       link: "tavross-final-version.vercel.app",
       github: "https://github.com/Tintaa307/tavross-final-version",
+      build: `This project was built with ${Icons().nextjs}, ${
+        Icons().typescript
+      }, ${Icons().tailwindcss}, ${Icons().framer} and ${Icons().prisma}`,
     },
     {
       name: "Pillwise",
       description: "Your personal pillbox reminder and medical assistant.",
       link: "#",
       github: "#",
+      build: `This project was built with ${Icons().nextjs}, ${
+        Icons().typescript
+      }, ${Icons().tailwindcss}, ${Icons().framer} and ${Icons().prisma}.`,
     },
     {
       name: "Todo App",
       description: "Notes app to have a list of pending things to do.",
       link: "todo-on1gbe3n9-tintaa307.vercel.app",
       github: "https://github.com/Tintaa307/todo-app",
+      build: `This project was built with ${Icons().vite}, ${
+        Icons().typescript
+      }, ${Icons().css} and ${Icons().framer}`,
     },
   ]
   return (
@@ -181,6 +197,7 @@ const Content = () => {
               <p className="w-3/4 text-gray-900 font-semibold text-sm">
                 {project?.description}
               </p>
+              <p>Technologies: {project?.build}</p>
               <a
                 className="w-1/2 flex items-center justify-center flex-row gap-3 bg-figma-radial border-[1px] border-figma_border shadow-dark rounded-md py-1.5 text-white-800 font-semibold hover:shadow-shine transition-shadow"
                 href={project?.github}
