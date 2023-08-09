@@ -83,5 +83,6 @@
   }
   body {
     @apply bg-black-900;
+    @apply overflow-x-hidden;
   }
 }

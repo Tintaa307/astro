@@ -1,4 +1,5 @@
 import About from "./components/about/About"
+import Contact from "./components/contact/Contact"
 import Landing from "./components/landing/Landing"
 import Navigation from "./components/nav/Navigation"
 import Projects from "./components/projects/Projects"
@@ -12,6 +13,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <Contact />
     </>
   )
 }
