@@ -129,7 +129,7 @@ export const Icons = () => {
         height="19"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="currentColor"
+        stroke="#fff"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -391,7 +391,7 @@ export const Icons = () => {
         <path stroke="#929297" d="M0 0h24v24H0z" fill="#929297"></path>
         <path
           d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3z"
-          stroke-width="0"
+          strokeWidth="0"
           fill="#929297"
         ></path>
       </svg>
@@ -460,7 +460,7 @@ export const Icons = () => {
         height="24"
         viewBox="0 0 24 24"
         strokeWidth="2"
-        stroke="currentColor"
+        stroke="#fff"
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -478,7 +478,7 @@ export const Icons = () => {
         height="24"
         viewBox="0 0 24 24"
         strokeWidth="2"
-        stroke="currentColor"
+        stroke="#fff"
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -496,7 +496,7 @@ export const Icons = () => {
         height="24"
         viewBox="0 0 24 24"
         strokeWidth="2"
-        stroke="currentColor"
+        stroke="#fff"
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -518,7 +518,7 @@ export const Icons = () => {
         height="24"
         viewBox="0 0 24 24"
         strokeWidth="2"
-        stroke="currentColor"
+        stroke="#fff"
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -527,6 +527,62 @@ export const Icons = () => {
         <path d="M16.5 5.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0"></path>
         <path d="M6 3h5v5h-5z"></path>
         <path d="M11 11v10a5 5 0 0 1 -.217 -9.995l.217 -.005z"></path>
+      </svg>
+    ),
+    loader: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="icon icon-tabler icon-tabler-loader-2 animate-spin"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        stroke="#fff"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 3a9 9 0 1 0 9 9"></path>
+      </svg>
+    ),
+    linkedin: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="icon icon-tabler icon-tabler-brand-linkedin"
+        width="27"
+        height="27"
+        viewBox="0 0 24 24"
+        strokeWidth="1.5"
+        stroke="#fff"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+        <path d="M8 11l0 5"></path>
+        <path d="M8 8l0 .01"></path>
+        <path d="M12 16l0 -5"></path>
+        <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+      </svg>
+    ),
+    email: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="icon icon-tabler icon-tabler-mail"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        stroke="#fff"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+        <path d="M3 7l9 6l9 -6"></path>
       </svg>
     ),
   }

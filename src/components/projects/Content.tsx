@@ -13,7 +13,7 @@ const variants = {
   on: {
     x: [0, 0, 1000],
     y: [220, -30, 420],
-    transition: { duration: 3, type: "tween", delay: 1.2, ease: "easeInOut" },
+    transition: { duration: 3, type: "tween", delay: 0.8, ease: "easeInOut" },
   },
 }
 
@@ -229,7 +229,10 @@ const Content = () => {
               className={"w-[300px] h-[400px] rounded-md"}
             />
           </div>
-          <div
+          <motion.div
+            initial={"off"}
+            variants={contentVariants}
+            animate={content ? "on" : "off"}
             onClick={() => {
               setClose(true)
               setContent(false)
@@ -237,7 +240,7 @@ const Content = () => {
             className="absolute top-5 left-5 cursor-pointer"
           >
             {Icons().close}
-          </div>
+          </motion.div>
         </div>
       </motion.div>
     </main>

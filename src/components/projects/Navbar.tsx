@@ -62,16 +62,7 @@ const Navbar = () => {
           })}
         </ul>
         <div className="w-1/2 flex items-center justify-center">
-          <motion.small
-            initial={{ y: -40, opacity: 0 }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-              transition: { duration: 0.5, type: "tween", delay: 2.4 },
-            }}
-            viewport={{ once: true }}
-            className="text-gray-800 font-normal text-sm"
-          >
+          <motion.small className="text-gray-800 font-normal text-sm">
             tintaa´s projects
           </motion.small>
         </div>
