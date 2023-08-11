@@ -2,7 +2,7 @@
 
 import { Button } from "../ui/button"
 import { Icons } from "../icons/Icons"
-import { motion } from "framer-motion"
+import { motion, Transition } from "framer-motion"
 import ParticlesContainer from "../particles/Particles"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 
@@ -25,7 +25,7 @@ const Landing = () => {
                 type: "tween",
                 bounce: 0.7,
                 delay: 0.5,
-              },
+              } as Transition,
             }}
             viewport={{ once: true }}
             className="text-white-0 font-semibold text-2xl select-none"
@@ -37,12 +37,14 @@ const Landing = () => {
       <motion.div
         initial={{ opacity: 0, y: -120 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.5,
-          delay: 1.5,
-          type: "tween",
-          bounce: 0.7,
-        }}
+        transition={
+          {
+            duration: 0.5,
+            delay: 1.5,
+            type: "tween",
+            bounce: 0.7,
+          } as Transition
+        }
         viewport={{ once: true }}
         className="w-full h-screen absolute top-0 left-0 -z-10"
       >
@@ -53,12 +55,14 @@ const Landing = () => {
           <motion.h1
             initial={{ y: -30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.5,
-              delay: 1,
-              type: "tween",
-              bounce: 0.7,
-            }}
+            transition={
+              {
+                duration: 0.5,
+                delay: 1,
+                type: "tween",
+                bounce: 0.7,
+              } as Transition
+            }
             viewport={{ once: true }}
             className="font-bold text-5xl text-center text-transparent bg-clip-text bg-gradient-to-br from-white-300 from-20% to-gray-900 flex items-center justify-center flex-col gap-3"
           >
@@ -70,12 +74,14 @@ const Landing = () => {
           <motion.div
             initial={{ opacity: 0, x: -80 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: 1,
-              type: "tween",
-              bounce: 0.7,
-            }}
+            transition={
+              {
+                duration: 0.5,
+                delay: 1,
+                type: "tween",
+                bounce: 0.7,
+              } as Transition
+            }
             viewport={{ once: true }}
           >
             <Button className="rounded-lg backdrop-blur-sm p-6 bg-transparent shadow-box flex items-center justify-center flex-row gap-3 px-7 hover:border hover:border-border transition-colors duration-200">
@@ -91,12 +97,14 @@ const Landing = () => {
           <motion.div
             initial={{ opacity: 0, x: 80 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: 1,
-              type: "tween",
-              bounce: 0.7,
-            }}
+            transition={
+              {
+                duration: 0.5,
+                delay: 1,
+                type: "tween",
+                bounce: 0.7,
+              } as Transition
+            }
             viewport={{ once: true }}
           >
             <Button className="rounded-lg backdrop-blur-sm p-6 bg-transparent shadow-box flex items-center justify-center flex-row gap-3 px-7 hover:border hover:border-border transition-colors duration-200">

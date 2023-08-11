@@ -1,5 +1,5 @@
 import { Icons } from "../icons/Icons"
-import { motion } from "framer-motion"
+import { motion, Transition } from "framer-motion"
 import {
   Menubar,
   MenubarContent,
@@ -66,7 +66,7 @@ const Navigation = () => {
                               type: "tween",
                               bounce: 0.7,
                               delay: index * 0.1,
-                            },
+                            } as Transition,
                           }}
                           whileHover={{
                             borderColor: "hsl(214.3 31.8% 91.4%)",
@@ -74,7 +74,7 @@ const Navigation = () => {
                             transition: {
                               duration: 0.3,
                               type: "tween",
-                            },
+                            } as Transition,
                           }}
                           className={[
                             "w-12 h-12 flex items-center justify-center mx-4 rounded-full border border-my_border",

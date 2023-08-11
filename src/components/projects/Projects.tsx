@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Title from "../shared/Title"
 import Navbar from "./Navbar"
-import { motion } from "framer-motion"
+import { motion, Transition } from "framer-motion"
 import { cn } from "../../lib/utils"
 import Content from "./Content"
 
@@ -38,7 +38,7 @@ const Projects = () => {
                 duration: 0.8,
                 type: "tween",
                 bounce: 0.7,
-              },
+              } as Transition,
             }}
             style={{
               height: myInnerHeight,

@@ -2,7 +2,7 @@
 
 import { Icons } from "../icons/Icons"
 import Title from "../shared/Title"
-import { motion } from "framer-motion"
+import { Transition, motion } from "framer-motion"
 
 const Skills = () => {
   const orbits = [
@@ -84,7 +84,7 @@ const Skills = () => {
               duration: 0.3,
               type: "tween",
               bounce: 0.7,
-            },
+            } as Transition,
           }}
           viewport={{ once: true }}
           className="text-gray-900 font-semibold text-xl"
@@ -103,7 +103,7 @@ const Skills = () => {
                 delay: 0.3 * index,
                 type: "tween",
                 bounce: 0.7,
-              },
+              } as Transition,
             }}
             animate={{
               rotate: 360,
@@ -125,11 +125,13 @@ const Skills = () => {
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              transition={{
-                duration: 1.2,
-                type: "spring",
-                delay: 4,
-              }}
+              transition={
+                {
+                  duration: 1.2,
+                  type: "spring",
+                  delay: 4,
+                } as Transition
+              }
               viewport={{ once: true }}
               className={[
                 "rounded-full bg-[#0000002d] backdrop-blur-sm flex items-center justify-center border-[1px] border-my_border cursor-pointer",
@@ -139,11 +141,13 @@ const Skills = () => {
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
-                transition={{
-                  duration: 1.2,
-                  type: "spring",
-                  delay: 4.1,
-                }}
+                transition={
+                  {
+                    duration: 1.2,
+                    type: "spring",
+                    delay: 4.1,
+                  } as Transition
+                }
                 viewport={{ once: true }}
                 className={[
                   "rounded-full bg-[#00000007] backdrop-blur-sm flex items-center justify-center cursor-pointer",
@@ -153,11 +157,13 @@ const Skills = () => {
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{
-                    duration: 1.2,
-                    type: "spring",
-                    delay: 4.2,
-                  }}
+                  transition={
+                    {
+                      duration: 1.2,
+                      type: "spring",
+                      delay: 4.2,
+                    } as Transition
+                  }
                   viewport={{ once: true }}
                   className={[
                     "rounded-full backdrop-blur-sm flex items-center justify-center cursor-pointer ",
@@ -173,13 +179,15 @@ const Skills = () => {
         <motion.div
           initial={{ scale: 0, rotate: 90 }}
           whileInView={{ scale: 1, rotate: 0 }}
-          transition={{
-            duration: 3,
-            type: "spring",
-            delay: 0.1,
-            bounce: 0.6,
-            stiffness: 100,
-          }}
+          transition={
+            {
+              duration: 3,
+              type: "spring",
+              delay: 0.1,
+              bounce: 0.6,
+              stiffness: 100,
+            } as Transition
+          }
           viewport={{ once: true }}
           className=""
         >
