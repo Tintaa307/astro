@@ -16,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        large: { raw: "(max-width: 950px)" },
+        xxl: { raw: "(min-width: 1400px)" },
+      },
       backgroundImage: {
         "gradient-radial":
           "radial-gradient(circle farthest-side at 50% 0,hsla(0,0%,100%,.12),hsla(0,0%,100%,0));",

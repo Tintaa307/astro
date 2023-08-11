@@ -39,8 +39,8 @@ const Navbar = () => {
   ]
   return (
     <header className="w-full h-12 border-t-0 border-l-0 border-r-0 border-[1px] border-b-my_border">
-      <nav className="w-full h-full flex justify-start items-center flex-row">
-        <ul>
+      <nav className="w-full h-full flex justify-evenly items-center flex-row">
+        <ul className="w-1/3 h-full">
           {navItems.map((item, index) => {
             return (
               <motion.li
@@ -61,13 +61,13 @@ const Navbar = () => {
             )
           })}
         </ul>
-        <div className="w-1/2 flex items-center justify-center">
+        <div className="w-1/3 flex items-center justify-center">
           <motion.small className="text-gray-800 font-normal text-sm">
             tintaa´s projects
           </motion.small>
         </div>
-        <div className="w-1/5 h-full flex items-center justify-end flex-row">
-          <ul className="flex items-center justify-center flex-row gap-8">
+        <div className="w-1/3 h-full flex items-center justify-end flex-row">
+          <ul className="flex items-center justify-center flex-row gap-8 mr-4">
             {secondaryItems.map((item, index) => (
               <motion.li
                 initial={{ opacity: 0, x: 40 }}

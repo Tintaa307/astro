@@ -11,8 +11,8 @@ import { Icons } from "../icons/Icons"
 const variants = {
   off: {},
   on: {
-    x: [0, 0, 1000],
-    y: [220, -30, 420],
+    x: [0, 0, 1420],
+    y: [220, -145, 540],
     transition: { duration: 3, type: "tween", delay: 0.8, ease: "easeInOut" },
   },
 }
@@ -37,7 +37,12 @@ interface ProjectProps {
   build: JSX.Element[]
 }
 
-const Content = () => {
+interface ContentProps {
+  widthSize: string
+  heightSize: string
+}
+
+const Content = ({ widthSize, heightSize }: ContentProps) => {
   const [isSelected, setIsSelected] = useState(false)
   const [counter, setCounter] = useState(0)
   const [item, setItem] = useState("")
@@ -45,7 +50,7 @@ const Content = () => {
   const [close, setClose] = useState(false)
   const [project, setProject] = useState({} as ProjectProps | undefined)
   const x = useMotionValue(0)
-  const scale = useTransform(x, [0, 1000], [0, 1]) as MotionValue<number>
+  const scale = useTransform(x, [0, 1420], [0, 1]) as MotionValue<number>
 
   useEffect(() => {
     const project = projects.find((project) => project.name === item)
@@ -158,7 +163,7 @@ const Content = () => {
         variants={variants}
         style={{ x }}
         animate={isSelected ? "on" : "off"}
-        className={cn("absolute -mt-96 left-[120px] opacity-0 z-20", {
+        className={cn("absolute -mt-96 left-[185px] opacity-0 z-20", {
           "opacity-100": isSelected,
         })}
         onAnimationComplete={() => {
@@ -174,6 +179,8 @@ const Content = () => {
           scale: scale,
           position: "absolute",
           transformOrigin: "top left",
+          width: widthSize,
+          height: heightSize,
         }}
         initial={{ x: 0 }}
         animate={
@@ -190,7 +197,7 @@ const Content = () => {
             : { x: 0 }
         }
         className={cn(
-          "w-[75%] h-[75%] bg-figma-radial border-[1px] border-figma_border shadow-dark rounded-lg"
+          "bg-figma-radial border-[1px] border-figma_border shadow-dark rounded-lg"
         )}
       >
         <div className="w-full h-full flex items-center justify-center flex-row">

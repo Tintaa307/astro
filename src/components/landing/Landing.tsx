@@ -50,10 +50,21 @@ const Landing = () => {
       </motion.div>
       <div className="w-max h-full flex items-center justify-center flex-col gap-16">
         <div>
-          <h1 className="font-bold text-5xl text-center text-transparent bg-clip-text bg-gradient-to-br from-white-300 from-20% to-gray-900 flex items-center justify-center flex-col gap-3">
+          <motion.h1
+            initial={{ y: -30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 1,
+              type: "tween",
+              bounce: 0.7,
+            }}
+            viewport={{ once: true }}
+            className="font-bold text-5xl text-center text-transparent bg-clip-text bg-gradient-to-br from-white-300 from-20% to-gray-900 flex items-center justify-center flex-col gap-3"
+          >
             <span className="">Valentin Gonzalez</span>
             <span className="">Fullstack Developer</span>
-          </h1>
+          </motion.h1>
         </div>
         <div className="w-max h-max flex justify-center items-center flex-row gap-16">
           <motion.div

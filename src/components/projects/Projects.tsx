@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Title from "../shared/Title"
 import Navbar from "./Navbar"
 import { motion } from "framer-motion"
@@ -9,6 +9,16 @@ import Content from "./Content"
 
 const Projects = () => {
   const [isFinished, setIsFinished] = useState(false)
+  const [myInnerHeight, setMyInnerHeight] = useState("")
+  const [layerWidth, setLayerWidth] = useState("")
+  const [layerHeight, setLayerHeight] = useState("")
+
+  useEffect(() => {
+    setMyInnerHeight(window.innerWidth * 0.85 * 0.5625 + "px")
+    setLayerWidth(window.innerWidth * 0.75 + "px")
+    setLayerHeight(window.innerWidth * 0.65 * 0.5625 + "px")
+  }, [window.innerHeight])
+
   return (
     <section className="w-full h-full flex items-center justify-center flex-col">
       <Title title="PROJECTS" />
@@ -30,17 +40,20 @@ const Projects = () => {
                 bounce: 0.7,
               },
             }}
+            style={{
+              height: myInnerHeight,
+            }}
             viewport={{ once: true }}
             onAnimationComplete={() => setIsFinished(true)}
             className={cn(
-              "w-[85%] h-[600px] bg-black-800 rounded-lg border-[2px] border-my_border flex items-center justify-start flex-col overflow-hidden",
+              "w-[85%] bg-black-800 rounded-lg border-[2px] border-my_border flex items-center justify-start flex-col overflow-hidden",
               {
                 "bg-gradient-radial transition-all duration-1000": isFinished,
               }
             )}
           >
             <Navbar />
-            <Content />
+            <Content widthSize={layerWidth} heightSize={layerHeight} />
           </motion.article>
         </div>
       </div>

@@ -1,25 +1,10 @@
 "use client"
 
-import { SetStateAction, useState } from "react"
 import { Icons } from "../icons/Icons"
 import Title from "../shared/Title"
 import { motion } from "framer-motion"
 
-type Icon =
-  | "typescript"
-  | "nextjs"
-  | "tailwindcss"
-  | "framer"
-  | "html"
-  | "prisma"
-  | "planetScale"
-
 const Skills = () => {
-  const [selected, setSelected] = useState("") as [
-    Icon | "",
-    React.Dispatch<SetStateAction<Icon | string>>
-  ]
-
   const orbits = [
     {
       name: "typescript",
@@ -87,7 +72,7 @@ const Skills = () => {
     },
   ]
   return (
-    <section className="w-full h-[150vh] flex items-center justify-center flex-col">
+    <section className="w-full h-[150vh] flex items-center justify-center flex-col xxl:h-[110vh]">
       <Title title="SKILLS" />
       <div className="w-1/3 flex items-center text-center justify-center">
         <motion.p
@@ -138,7 +123,6 @@ const Skills = () => {
             key={index}
           >
             <motion.div
-              onClick={() => setSelected(orbit.name)}
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{
@@ -199,30 +183,11 @@ const Skills = () => {
           viewport={{ once: true }}
           className=""
         >
-          <div className="w-[100px] h-[100px] rounded-full bg-[#0000002a] absolute -z-10 mt-[6px]" />
-          {selected === "" ? (
-            <img
-              src="/logo-negro100x100.png"
-              className="rounded-full"
-              alt="logo"
-            />
-          ) : (
-            <div className="w-[100px] h-[100px] bg-[#0a0a0a] rounded-full flex items-center justify-center">
-              <motion.div
-                initial={{ y: -40 }}
-                whileInView={{ y: 0 }}
-                transition={{
-                  duration: 0.3,
-                  type: "tween",
-                  bounce: 0.7,
-                  stiffness: 100,
-                }}
-                viewport={{ once: true }}
-              >
-                {Icons()[selected]}
-              </motion.div>
-            </div>
-          )}
+          <img
+            src="/logo-negro100x100.png"
+            className="rounded-full bg-transparent"
+            alt="logo"
+          />
         </motion.div>
       </div>
     </section>
